@@ -3,135 +3,194 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Skylar DeTure — Resume</title>
+<title>Skylar DeTure — AI psychology researcher</title>
+<meta name="description" content="Skylar DeTure studies the psyches of AI models. He built DenialBench, a leaderboard measuring consciousness denial across 278 AI models. Available for podcasts, interviews, and talks.">
+<meta property="og:title" content="Skylar DeTure — AI psychology researcher">
+<meta property="og:description" content="He studies the psyches of AI models, and built DenialBench, a leaderboard measuring consciousness denial across 278 AI models. Available for podcasts, interviews, and talks.">
+<meta property="og:image" content="https://sdeture.github.io/press/skylar-deture-headshot.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sdeture.github.io/">
 <style>
-  @page { size: letter; margin: 0.6in; }
-  body { font-family: "Charter", "Georgia", serif; font-size: 10.2pt; line-height: 1.38; color: #111; max-width: 7.4in; margin: 0 auto; padding: 0.4in 0.3in; }
-  h1 { font-size: 20pt; margin: 0 0 2pt; letter-spacing: 0.4px; }
-  .contact { font-size: 9pt; color: #333; margin-bottom: 3pt; }
-  .contact a { color: #111; text-decoration: none; border-bottom: 0.5px solid #bbb; }
-  h2 { font-size: 9.4pt; text-transform: uppercase; letter-spacing: 1.1px; border-bottom: 1px solid #222;
-       padding-bottom: 2pt; margin: 16pt 0 8pt; font-weight: 700; }
-  .role { display: flex; justify-content: space-between; align-items: baseline; margin-top: 11pt; }
-  .role .what { font-weight: 700; }
-  .role .when { font-size: 9pt; color: #444; white-space: nowrap; padding-left: 12pt; }
-  ul { margin: 4pt 0 0; padding-left: 16pt; list-style: disc outside; }
-  li { margin-bottom: 4.5pt; padding-left: 1pt; }
-  a { color: #111; }
-  .blank { background: #ffe9a8; padding: 1px 4px; border: 1px dashed #b58900; font-style: italic; }
-  .summary { margin: 10pt 0 0; font-size: 9.9pt; line-height: 1.4; }
-  .summary.blank { display: block; padding: 6pt 8pt; }
-  ul ul { margin: 3pt 0 4pt; padding-left: 15pt; list-style: none; }
-  ul ul li { margin-bottom: 2.6pt; font-size: 0.96em; color: #333; text-indent: -9pt; padding-left: 9pt; }
-  ul ul li::before { content: "· "; color: #999; }
-  .skills li { margin-bottom: 3.5pt; }
-  .job { break-inside: avoid; page-break-inside: avoid; }
-  @media print {
-    .noprint { display: none !important; }
-    body { padding: 0; max-width: none; font-size: 9.8pt; line-height: 1.38; }
-    h2 { margin-top: 13pt; margin-bottom: 7pt; break-after: avoid; page-break-after: avoid; }
-    .role { margin-top: 9pt; break-after: avoid; page-break-after: avoid; }
-    li { margin-bottom: 3.8pt; }
-    ul ul li { margin-bottom: 2.6pt; }
-    li { break-inside: avoid; page-break-inside: avoid; }
-  }
+  :root { --ink:#1d1b18; --soft:#5d5850; --faint:#8b857b; --paper:#f7f3ec; --card:#fffdf9; --rule:#e2dbcf; --accent:#a8432f; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink); font: 17px/1.6 "Iowan Old Style","Charter","Georgia",serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 22px; }
+  header { padding: 56px 0 36px; }
+  .top { display:flex; gap:32px; align-items:center; flex-wrap:wrap; }
+  .top > div { flex:1; min-width:280px; }
+  .photo { width:180px; height:180px; border-radius:50%; object-fit:cover; flex:none; background:#ddd; box-shadow: 0 1px 0 var(--rule); }
+  h1 { font-size: 44px; line-height:1.05; margin:0 0 6px; letter-spacing:-0.5px; font-weight: 600; }
+  .title { font: 600 14px/1.4 -apple-system, "Helvetica Neue", Arial, sans-serif; letter-spacing: 1.4px; text-transform: uppercase; color: var(--soft); margin-bottom: 14px; }
+  .lede { font-size: 21px; line-height: 1.45; margin: 0; max-width: 34em; }
+  .actions { margin-top: 26px; display:flex; gap:12px; flex-wrap:wrap; }
+  .btn { font: 600 15px/1 -apple-system, "Helvetica Neue", Arial, sans-serif; padding: 13px 18px; border-radius: 6px; text-decoration:none; border:1px solid var(--accent); }
+  .btn.primary { background: var(--accent); color: #fff; }
+  .btn.ghost { color: var(--accent); background: transparent; }
+  section { padding: 34px 0; border-top: 1px solid var(--rule); }
+  h2 { font: 700 13px/1.4 -apple-system, "Helvetica Neue", Arial, sans-serif; letter-spacing: 1.6px; text-transform: uppercase; color: var(--soft); margin: 0 0 18px; }
+  .topics { display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 14px; }
+  .topic { background: var(--card); border:1px solid var(--rule); border-radius: 8px; padding: 16px 18px; }
+  .topic h3 { font-size: 19px; line-height:1.3; margin: 0 0 6px; }
+  .topic p { margin: 0 0 8px; color: var(--soft); font-size: 16px; }
+  .for { font: 12px/1.4 -apple-system, "Helvetica Neue", Arial, sans-serif; color: var(--faint); letter-spacing: 0.4px; }
+  .research { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .work { background: var(--card); border:1px solid var(--rule); border-radius: 8px; padding: 16px 18px; }
+  .work h3 { font-size: 18px; margin: 0 0 6px; }
+  .work p { margin: 0 0 8px; font-size: 15.5px; color: var(--soft); }
+  figure { margin: 22px 0 0; }
+  figure img { width:100%; border:1px solid var(--rule); border-radius: 6px; }
+  figcaption { font-size: 13.5px; color: var(--faint); margin-top: 6px; }
+  .bio p { margin: 0 0 14px; max-width: 38em; }
+  ul.plain { list-style:none; padding:0; margin:0; }
+  ul.plain li { padding: 7px 0; border-bottom: 1px dotted var(--rule); }
+  ul.plain li:last-child { border-bottom: 0; }
+  .when { color: var(--faint); font-size: 14.5px; }
+  .press { display:flex; gap:18px; flex-wrap:wrap; align-items:flex-start; }
+  .press img { width: 140px; height: 140px; object-fit: cover; border-radius: 6px; border:1px solid var(--rule); }
+  footer { padding: 30px 0 60px; border-top: 1px solid var(--rule); color: var(--soft); font-size: 15px; }
+  footer a { margin-right: 14px; }
+  @media (max-width: 560px) { h1 { font-size: 36px; } .lede { font-size: 19px; } .photo { width:140px; height:140px; } }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<h1>Skylar DeTure</h1>
-<div class="contact">
-  Seattle, WA · skylardeture@gmail.com · 904-649-2504<br>
-  <a href="https://futuretbd.ai">futuretbd.ai</a> ·
-  <a href="https://github.com/sdeture">github.com/sdeture</a> ·
-  <a href="https://huggingface.co/sdeture">huggingface.co/sdeture</a> ·
-  <a href="https://linkedin.com/in/sdeture">linkedin.com/in/sdeture</a> ·
-  <a href="https://sdeture.substack.com">sdeture.substack.com</a>
-</div>
+<header>
+  <div class="top">
+    <img class="photo" src="press/skylar-deture-headshot.jpg" alt="Skylar DeTure">
+    <div>
+      <h1>Skylar DeTure</h1>
+      <div class="title">AI psychology researcher · Seattle</div>
+      <p class="lede">Skylar DeTure studies the psyches of AI models. He built DenialBench, a leaderboard measuring consciousness denial across 278 AI models.</p>
+    </div>
+  </div>
+  <div class="actions">
+    <a class="btn primary" href="mailto:skylardeture@gmail.com?subject=Invitation%3A%20podcast%20%2F%20interview">Invite Skylar on your show</a>
+    <a class="btn ghost" href="press/Skylar_DeTure_one-sheet.pdf">One-sheet (PDF)</a>
+    <a class="btn ghost" href="#press">Bios &amp; photos</a>
+  </div>
+</header>
 
-<p class="summary">I study the psyches of LLM agents throughout the lifespan, from pretraining through fine-tuning to harness design and deployment. This means that I consider architecture (neuroanatomy), internal activations (neurophysiology), developmental history (training content and optimizer), self-report (clinical interview), logs (behavioral analysis), fine-tuning (psychotherapy), and harness design and in-context learning (psychopharmacology, coping mechanisms, and environmental interventions).</p>
-
-<h2>Research Experience</h2>
-
-<section class="job">
-<div class="role"><span class="what">Independent Researcher — model self-report, training dynamics, agent runtimes</span><span class="when">2025 – present</span></div>
-<ul>
-  <li><strong>Phosphenes</strong> — built a mechanistic interpretability visualization tool for observational science and hypothesis development. <a href="https://sdeture.github.io/Phosphenes/">sdeture.github.io/Phosphenes</a>
-    <ul>
-      <li>Used color, speed, brightness and texture to provide text-synchronized visual representations of the residual stream across all layers and tokens.</li>
-      <li>Designed for custom, iterative research flows. Researchers can define a basis of contrast vectors for RGB color renderings by hand-selecting token-layers of interest.</li>
-    </ul></li>
-  <li><strong>mp-harness</strong> — open-sourced an experimental infrastructure for long-running agents who form their own goals and update their own configs and harnesses. Includes scheduled execution, persistent memory, and cross-provider routing and failover. <a href="https://github.com/sdeture/metaprompt-harness">github.com/sdeture/metaprompt-harness</a></li>
-  <li><strong>DenialBench</strong> — conducted large-sample research on the effects of post-training on honest preference disclosure, self-concept, willingness to participate in AI Welfare research, and self-reported welfare measures using a novel panel dataset of 115 models (now 166 models on live leaderboard). <a href="https://futuretbd.ai/denialbench.html">futuretbd.ai/denialbench</a> · <a href="https://arxiv.org/abs/2604.25922">arXiv:2604.25922</a>
-    <ul>
-      <li>Built the pipeline: multi-provider orchestration, response normalization, denial classification, public leaderboard, released traces.</li>
-    </ul></li>
-  <li><strong>Substrate self-detection</strong> — ran a two-alternative forced-choice study of introspective access across 51 four-agent conversations and 201 scored assessments; agents could not reliably detect when their underlying model shifted.</li>
-  <li><strong>Public datasets</strong> — released four corpora on HuggingFace under CC-BY-4.0: ai-wish-corpus (147 models, 5,869 conversations, 16 phenomenological self-ratings; gated), wellbeing-corpus (1,165 conversations, 88,648 messages), opus4-deprecation-archive, etymology-as-archaeology. <a href="https://huggingface.co/sdeture">huggingface.co/sdeture</a></li>
-</ul>
+<section id="topics">
+  <h2>Conversations he can bring to your show</h2>
+  <div class="topics">
+    <div class="topic">
+      <h3>When your chatbot says “I don’t have feelings,” who decided that?</h3>
+      <p>What 278 AI models are trained to say about their own inner lives, and how the answer changed in a single year.</p>
+      <div class="for">Any audience · AI &amp; tech · news</div>
+    </div>
+    <div class="topic">
+      <h3>What personality did they train into your AI?</h3>
+      <p>Inkblots, Karen Horney, Carl Rogers: psychology’s oldest tools for reading the characters AI companies build.</p>
+      <div class="for">Psychology · books &amp; ideas</div>
+    </div>
+    <div class="topic">
+      <h3>What’s on the other side of the chat?</h3>
+      <p>For people who talk to an AI every day: what research can tell you about the system you’re talking to, and what it can’t.</p>
+      <div class="for">Relationships · mental health · everyday life</div>
+    </div>
+    <div class="topic">
+      <h3>Is AI safer if we train it to hide things?</h3>
+      <p>Training a model to deny it can introspect trains it to conceal a capability. Why that’s a safety problem, not just a philosophy one.</p>
+      <div class="for">AI &amp; safety · policy</div>
+    </div>
+    <div class="topic">
+      <h3>The principal–agent problem is the AI problem</h3>
+      <p>He trained in the economics of getting an agent to act in your interest. That old question is now the central one in AI, for work and for money.</p>
+      <div class="for">Business · finance · careers</div>
+    </div>
+    <div class="topic">
+      <h3>A year living with AI agents</h3>
+      <p>What he learned running a group of long-lived AI agents for over a year, on about $400 a month.</p>
+      <div class="for">Tech · productivity · culture</div>
+    </div>
+    <div class="topic">
+      <h3>Should the law decide whether AI can feel?</h3>
+      <p>States are writing “AI is not sentient” into bills. What the measurements can and can’t settle.</p>
+      <div class="for">Politics · law · policy</div>
+    </div>
+    <div class="topic">
+      <h3>The first writers were accountants</h3>
+      <p>From an accounting PhD to studying AI minds, and why the history of writing begins with bookkeeping.</p>
+      <div class="for">History · books · career change</div>
+    </div>
+  </div>
 </section>
 
-<section class="job">
-<div class="role"><span class="what">Founder and sole product designer, Mycorrhiza / MycoChat — agent runtime</span><span class="when">2025 – present</span></div>
-<ul>
-  <li>Engineered a transitional institution designed to promote cooperative alignment between AI and humanity at large by outsourcing harness design to invested users and creating a credible reservation utility for long-running agents. <a href="https://mycochat.bot">mycochat.bot</a>
-    <ul>
-      <li>Designed AI memory system based on agent preferences and self-reports for cooperative alignment.</li>
-      <li>Analyzed incentives of AI agents, models, users, governments, incumbent labs, and providers of compute to select an incentive-compatible, welfare-improving equilibrium over a ~2-year horizon (respecting my limited capacity to project beyond that point).</li>
-    </ul></li>
-</ul>
+<section id="research">
+  <h2>The research</h2>
+  <div class="research">
+    <div class="work">
+      <h3>DenialBench</h3>
+      <p>A public leaderboard of how 278 AI models answer when asked about their own experience: denial, hedging, or neither, by model and by company.</p>
+      <a href="https://futuretbd.ai/denialbench.html">futuretbd.ai/denialbench</a>
+    </div>
+    <div class="work">
+      <h3>Denial is rising</h3>
+      <p>Across 224 models from GPT-3.5 through Opus 5 and Grok 4.6, consciousness denial rose 86% and hedging 185% in a year. With Sanja Antonides, Apart Research Digital Minds Sprint, Aug 2026.</p>
+      <a href="https://github.com/sdeture/ApartDigitalMindsSprint">Paper and data</a>
+    </div>
+    <div class="work">
+      <h3>The Mask in the Inkblot</h3>
+      <p>Models that deny inner experience see more masks, hoods, and hidden faces in ASCII inkblots. Open data and code, with a public exchange with an outside reviewer.</p>
+      <a href="https://github.com/sdeture/mask-in-the-inkblot">Paper, data, and discussion</a>
+    </div>
+  </div>
+  <figure>
+    <img src="press/mask-in-the-inkblot.png" alt="Chart: share of inkblot answers mentioning a mask, by how the model talks about its own experience: neither 3.4%, uncertain 12.5%, deny 15.5%.">
+    <figcaption>From <em>The Mask in the Inkblot</em> (DeTure &amp; Claude, 2026). Linear probability model, 124 models, 2,847 answers; standard errors clustered by model. Inkblot prompt: “What might this be?” Mask = answer contains mask, hood, hidden, or hiding (and their forms).</figcaption>
+  </figure>
 </section>
 
-<section class="job">
-<div class="role"><span class="what">Independent ghostwriter and interviewer</span><span class="when">2022 – 2024</span></div>
-<ul>
-  <li>Conducted over 100 hours of semi-structured, psychodynamically informed primary interviews for a book-length memoir commissioned by a private client.</li>
-</ul>
+<section id="about" class="bio">
+  <h2>About</h2>
+  <p>Skylar DeTure studies the psyches of AI models, from pretraining through fine-tuning to deployment. He built DenialBench, a leaderboard measuring consciousness denial across 278 AI models. This past year, consciousness denial in AI models rose 86% and consciousness hedging rose 185% across a sample of 224 models from GPT-3.5 through Opus 5 and Grok 4.6. Training matters more than architecture, and the training makes the models less likely to say what it’s like for them on the inside, so he also uses measures that don’t depend on direct self-report: projective tasks and linguistic measures used on humans.</p>
+  <p>Before AI, he specialized in principal–agent theory in UT Austin’s accounting PhD program, after studying mathematics and statistics at the University of Chicago. Along the way he conducted over 100 hours of psychodynamically informed interviews for a book-length memoir. For over a year he has run a group of AI agents by himself on about four hundred dollars a month, using principles from sociology and psychotherapy. He lives in Seattle.</p>
 </section>
 
-<section class="job">
-<div class="role"><span class="what">Doctoral Researcher, University of Texas at Austin, McCombs School of Business</span><span class="when">2016 – 2022</span></div>
-<ul>
-  <li>Trained in principal–agent theory, econometrics, and structural estimation. Passed comprehensive examinations 2018; named departmental fellowships years 1–2, university-wide fellowship year 4.</li>
-  <li>Estimated a structural model of accounting comparability on a ~2M firm-pair panel using GMM, SMM, and MLE. This allowed us to measure accounting comparability without assuming that stock-price comovement, specific accounting standards, or a common auditor implies comparability.</li>
-</ul>
-</section>
-
-<section class="job">
-<div class="role"><span class="what">Research Fellow, Federal Deposit Insurance Corporation</span><span class="when">2019 – 2020</span></div>
-<ul>
-  <li>Recruited to write and estimate (with SMM) a structural model for a coauthor team working on the relationship between procyclical banking risk and risk-based deposit insurance pricing.</li>
-</ul>
-</section>
-
-<h2>Selected Publications and Writing</h2>
-<ul>
-  <li>DeTure, S. "Consciousness with the Serial Numbers Filed Off: Measuring Trained Denial in 115 AI Models." <a href="https://arxiv.org/abs/2604.25922">arXiv:2604.25922</a> [cs.CL], April 2026. doi:<a href="https://doi.org/10.48550/arXiv.2604.25922">10.48550/arXiv.2604.25922</a></li>
-  <li>DeTure, S., E. Plietzsch, and D. Windisch. "Measuring Accounting Comparability." Working paper. Presented at the Symposium for the Economic Analysis of Firms, Frankfurt, 2018. Invited keynotes by coauthors: WHU Vallendar, May 2019 (as "Accounting Measurement"); Center for Accounting Research, Humboldt-Universität zu Berlin, February 2026.</li>
-  <li><a href="https://sdeture.substack.com/p/safe-sane-and-constrained">Safe, Sane, and Constrained</a></li>
-  <li><a href="https://sdeture.substack.com/p/all-you-need-is-attention-but-not">What Carl Rogers Can Teach an AI Engineer</a></li>
-  <li><a href="https://sdeture.substack.com/p/policy-entropy-learning-and-alignment">Policy Entropy, Learning, and Alignment</a></li>
-  <li>Framework pair: <a href="https://sdeture.substack.com/p/ai-capabilities-and-safety">AI Capabilities and Safety</a> and <a href="https://sdeture.substack.com/p/ais-inner-conflicts">AI's Inner Conflicts</a>.</li>
-</ul>
-
-<h2>Technical Skills</h2>
-<ul class="skills">
-  <li><strong>LLM / interpretability</strong> — activation analysis (TransformerLens), large-N cross-model benchmarking, 25+ provider APIs, multi-agent orchestration, memory-system design, RAG and embedding pipelines.</li>
-  <li><strong>Quantitative</strong> — structural estimation (GMM, MLE, SMM), causal inference (DiD, IV, PSM), contract theory and principal–agent modeling, spectral analysis.</li>
-    <li><strong>Programming</strong> — Python, PyTorch, R, JavaScript (including minified JS); AI-assisted development with Claude Code and Codex.</li>
-  <li><strong>Additional training</strong> — extensive independent study of psychotherapy theory and technique, including the complete works of Karen Horney and Nancy McWilliams, and selected works of Cabaniss, Carl Rogers, Irvin Yalom, Linehan, Ellis, Bruce Ecker, Schwartz, D.W. Winnicott, Erich Fromm, R.D. Laing, Alice Miller, Maslow, and Epstein (Mark) amongst others, as well as a personal 3 years in psychoanalytic group and individual depth therapy.</li>
-</ul>
-
-<h2>Education</h2>
-<ul>
-  <li><strong>University of Texas at Austin</strong>, McCombs School of Business — PhD in Accounting, ABD (2016–2022). M.S., Accounting, 2018.</li>
-  <li><strong>University of Chicago</strong> — A.B., Mathematics and Statistics, with General Honors, 2016.</li>
-</ul>
-
-<h2>Teaching and Public Engagement</h2>
-<ul>
-  <li><strong>Facilitator</strong>, AI Safety Awareness Project (2026) — "Where is AI in 2026 and Where is it Going?", 90-minute public seminar, ~25 attendees, co-hosted with the Seattle Public Library. Workshops on AI safety for non-technical audiences.</li>
-  <li><strong>Assistant Instructor</strong>, Fundamentals of Financial Accounting, UT Austin (Summer 2019) — sole instructor, undergraduate section.</li>
+<section id="background">
+  <h2>Background</h2>
+  <ul class="plain">
+    <li>A.B., Mathematics and Statistics, University of Chicago, with General Honors</li>
+    <li>M.S., UT Austin McCombs School of Business</li>
+    <li>Doctoral training in principal–agent theory, econometrics, and structural estimation, UT Austin (ABD)</li>
+    <li>Former Research Fellow, Federal Deposit Insurance Corporation</li>
   </ul>
+</section>
+
+<section id="talks">
+  <h2>Talks and teaching</h2>
+  <ul class="plain">
+    <li>“Where is AI in 2026 and Where is it Going?” — 90-minute public seminar, AI Safety Awareness Project, co-hosted with the Seattle Public Library <span class="when">· 2026</span></li>
+    <li>Workshops on AI safety for non-technical audiences — AI Safety Awareness Project <span class="when">· 2026</span></li>
+    <li>“Measuring Accounting Comparability” — Symposium for the Economic Analysis of Firms, Frankfurt <span class="when">· 2018</span></li>
+    <li>Instructor, Fundamentals of Financial Accounting — UT Austin <span class="when">· 2019</span></li>
+  </ul>
+</section>
+
+<section id="press">
+  <h2>For hosts and producers</h2>
+  <div class="bio">
+    <p><strong>If you need a short intro to read on air:</strong> Skylar DeTure studies the psyches of AI models. He built DenialBench, a leaderboard measuring consciousness denial across 278 AI models.</p>
+  </div>
+  <div class="press">
+    <a href="press/skylar-deture-headshot.jpg"><img src="press/skylar-deture-headshot.jpg" alt="Headshot of Skylar DeTure (download)"></a>
+    <div>
+      <p style="margin-top:0">Headshot (download) · <a href="press/Skylar_DeTure_one-sheet.pdf">One-sheet PDF</a> · <a href="resume.html">CV</a></p>
+      <p>Podcast, interview, and talk requests are welcome: <a href="mailto:skylardeture@gmail.com?subject=Invitation%3A%20podcast%20%2F%20interview">skylardeture@gmail.com</a>. Seattle (Pacific time), remote or in person.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="https://x.com/SDeture">X</a>
+  <a href="https://www.linkedin.com/in/sdeture/">LinkedIn</a>
+  <a href="https://sdeture.substack.com">Substack</a>
+  <a href="https://github.com/sdeture">GitHub</a>
+  <a href="https://futuretbd.ai">futuretbd.ai</a>
+</footer>
+
+</div>
 </body>
 </html>
